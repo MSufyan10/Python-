@@ -1,0 +1,682 @@
+#python Dictionaries 
+#Dictionaries are ordered collection of items. They are separated by commas and enclosed by curly bracket {}
+dic = {
+1: "Sufyan",
+2: "Subhan",
+3:  "Zakir",
+4: "Neha"} 
+print (dic[1])  #ans Sufyan
+print (dic[2])  #ans Subhan
+
+#accessing Dictionaries value #if you want to access value in dictionary 
+info = {'name': 'Sufyan', 'age': '19', 'eligable': True}
+print (info['name']) #ans Sufyan 
+print (info.get('name')) #ans Sufyan
+#both are same but the difference is that if the value that you are accessing not available in (info.['name']) it will show error but the other one shows none
+
+#accessing multiple value #ifyou want to access multiple value in dictionary 
+info = {'name': 'Sufyan', 'age': '19', 'eligable': True}
+print (info.keys()) #ans dict_keys(['name', 'age', 'eligable'])
+print (info.values())#ans     dict_values(['Sufyan', '19', True])
+#if you want keys use .keys if you want values use .values
+#other
+for key in info.keys():
+    print (f"The value to the key {key} is {info[key]}")
+#anm The value to the key name is Sufyan
+#The value to the key age is 19
+#The value to the key eligable is True
+
+#accessing key_value pairs #if you want print all the key_value 
+info = {'name': 'Sufyan', 'age': '19', 'eligable': True} 
+print (info.items()) 
+#ans dict_items([('name', 'Sufyan'), ('age', '19'), ('eligable', True)])
+#other
+for key, value in info.items():
+    print (f"The value of the key {key} is {value}")
+#ans The value of the key name is Sufyan
+#The value of the key age is 19
+#The value of the key eligable is True
+
+#Dictionary methods    #if you want to update the dictionary 
+#update()
+ep1 = {122:45, 123:89, 567:69, 670:69}
+ep2 = {222:67, 566:90}
+ep1.update(ep2)
+print (ep1)
+#ans {122: 45, 123: 89, 567: 69, 670: 69, 222: 67, 566: 90}
+
+#clear()    #if you want to clear all the things from dictionary 
+ep1 = {122:45, 123:89, 567:69, 670:69}
+ep1.clear()
+print (ep1)  #ans {}
+
+#if you want to print empty dictionary 
+empty = {} 
+print (empty)     #ans {}
+
+#pop()     #if you want to remove one thing from dictionary 
+ep1 = {122:45, 123:89, 567:69, 670:69}
+ep1.pop(122)
+print (ep1)  #{123:89, 567:69, 670:69}
+
+#popitem()    #if you want to delete the last key_value from dictionary 
+ep1 = {122:45, 123:89, 567:69, 670:69}
+ep1.popitem()
+print (ep1)    #{122: 45, 123: 89, 567: 69}
+
+#del     #if you want to delete the whole dictionary 
+ep1 = {122:45, 123:89, 567:69, 670:69}
+del ep1     #ans  
+
+#you can also remove one item from del method 
+ep1 = {122:45, 123:89, 567:69, 670:69}
+del ep1[122]
+
+#python else in loop 
+for i in range(5):    
+    print(i)
+else:
+    print ("sorry no i")
+ #ans     0
+ #          1
+#           2
+#           3
+#           4
+#           sorry no i
+
+#other
+for i in range(6):
+    print(i)
+    if i==4:
+        break
+else:
+      print ("sorry no i")     
+#ans       0
+#            1
+#            2
+#            3
+#            4
+
+#Exception Handling #if the user inputa value that causes error and you want them to know that there is a error and want to print other code
+a = input("Enter your number ")
+print (f"Multiplication table of {a} is:")
+try:
+    for i in range (1, 11):
+        print (f"{int(a)} × {i} = {int(a)*i}")
+except:
+    print ("Invalid Input!")      
+    
+print ("Some important line of code")  
+print ("End of program")
+
+#if the you input a interger it will print the table of that number. but if the user put a string it will print the except code
+
+#if the user input a string 
+#Enter your number sufyan
+#Multiplication table of sufyan is:
+#Invalid Input!
+#Some important line of code
+#End of program
+
+#if you want to give specific error 
+try:
+    num = int(input("Enter an intiger"))
+    a = [6, 3]
+    print (a[num])
+except ValueError:
+    print ("Number entered is not an intiger")
+except IndexError:
+    print ("Index Error")
+#if the input is Abc it will print value error
+   
+#finally cause #in finally method the code will always execuite
+try:
+ l = [ 1, 2, 5, 6]
+ i = int(input("Enter the index: " ))
+ print (l[i])
+except:
+    print ("Some error occoured")
+finally:
+    print ("I am always execuited")
+    
+#ans  input = sa
+#Enter the index: sa
+#Some error occoured
+#I am always execuited
+
+#raising custom error   #if you want to raise custom error 
+a = int(input("Enter a number between 5 and 9 "))
+if (a<5 or a>9):
+        raise ValueError ("Value should be between 5 and 9")
+#ans input = 2 it will raise error
+#ans input = sa it will raise error 
+
+#if _ else in one line    #you can use if else statement in one line
+a = 333000
+b = 3300
+print ("A") if a<b else print ("B") if a==b else print ("C")  #ans C
+
+#Enumerate funtion in python #if you want to print values with their index
+fruits = ["apple", "banana", "orange"]
+for index, fruits in enumerate(fruits):
+    print (index, fruits)
+#ans   0 apple
+#        1 banana
+#        2 orange
+
+#you can also change the start index
+fruits = ["apple", "banana", "orange"]
+for index, fruits in enumerate(fruits, start = 1):
+    print (index, fruits)
+#ans   1 apple
+#        1 banana
+#        2 orange
+
+#virtual environment   #if you are working in group and your friend gives you code but the version your friend using is different so if we want to use the code we have to use virtual environment in it we can use different versions of a software for using we have to make a folder in laptop for dowloading  different versions we use code 
+#for making a new environment (same)
+#-> python m venu dir_name
+#for activating the environment 
+#dir_name\script\activate
+
+#How importing works in python
+from math import sqrt, pi
+result = sqrt(9)* pi
+print (result) #9.42477796076938
+
+#as         #we can safe a value as any name like import math as m
+import math as m
+result = m.sqrt(9)* m.pi
+print (result)    #9.42477796076938
+
+#The dit function #using dir function you can import everything in that module
+import math
+print (dir(math)) #['__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'cbrt', 'ceil', 'comb', 'copysign', 'cos', 'cosh', 'degrees', 'dist', 'e', 'erf', 'erfc', 'exp', 'exp2', 'expm1', 'fabs', 'factorial', 'floor', 'fma', 'fmod', 'frexp', 'fsum', 'gamma', 'gcd', 'hypot', 'inf', 'isclose', 'isfinite', 'isinf', 'isnan', 'isqrt', 'lcm', 'ldexp', 'lgamma', 'log', 'log10', 'log1p', 'log2', 'modf', 'nan', 'nextafter', 'perm', 'pi', 'pow', 'prod', 'radians', 'remainder', 'sin', 'sinh', 'sqrt', 'sumprod', 'tan', 'tanh', 'tau', 'trunc', 'ulp']
+
+# *        you can import everything from a file using *
+from file import *
+
+#if __name__ == "__main__":
+    #this idom is a common pattern used in python script to determine whether the script is being run directly or being imported as a module into another script
+#This code is in another file_script
+def main():
+    print ("Running script directly")
+if  __name__"__ main __" :
+    main()
+#importing ths code in another file
+import script
+script.main()  #Running script directly 
+
+#os module in python #you can make multiple files or add multiple files in other files you can add one file to multiple file and change multiple files at once
+import os
+
+if (not os.path.exists("data")) #if the file is not available is will make one
+os.mkdir("data")
+
+for i in range(0, 100):
+    os.mkdir(f"data/Day(i+1)")
+#ans in data file 
+#Day 1 to Day 100 
+
+#if I want to rename files 
+import os
+for i in range (0, 100):
+    os.rename(f"data/Day(i+1)", f"data/Tutorial(I+1)")
+    #ans Tutorial 1 to Tutoral 100
+
+#local variable global variable 
+#local variable is defined with in a function and is only accessible with in that funtion. global variable is a variable that is defined outside of a function and is accessible from with in function 
+#x = 1 local variable 
+#def x
+#x = 2 global variable 
+
+x = 10 
+
+def my_function():
+    y = 5
+    print (y)
+my_function()
+print (x)   #ans 10
+#print (y)  #it will cause an error beacay is a local variable and is not accessible outside of the function 
+#if i want to change the global variable within the function 
+x = 10 
+
+def my_function():
+    global x
+    x = 4
+    y = 5
+    print (y)
+my_function()
+print (x)  #ans 5
+               #    4
+
+#opening a file    #you can open a file or extrait in python using   open ('filename.txt', 'r')                                
+f = open('file1.txt', 'r')      
+text = f.read()
+print (text)
+f.close()     #ans it will print the text from the file
+
+#1. read (r) This mode opens the file for reading only and given am error if the file not exist, r mode is default.
+
+#2.write (w) this mode opens the file for writing only and creates a new file if the file not exist
+
+#3. append (a) This mode open the file foe appending only and create a new File if not exist.
+
+#4.create (x) This mode creates a file and gives an error if the file already exist.
+
+#5.text (t) mode is used to handle text like 'rt' 'wt' we don't have to add it because it is default 
+
+#6.binary (b) used to handle binary files (images, pdfs, etc)
+
+#Reading from a File
+
+f = open('myfile.txt', 'r')
+Content = f.read()
+print (content)     #it will print from that file
+
+# writing to a life
+f = open ('myfile.txt', 'w')
+f.write ("Hello, world")
+f.close()  #ans it will write this text in that file
+
+#Append to a file
+f = open ('myfile.txt', 'a')
+f.write ("Hello, world"/
+f.close()  #every time you execute the code it be added in that file
+
+#The 'with' statement #in with statement wo don't have to close the file
+
+with open ('myfile.txt', 'a') as f:
+    f.write("Hey I am inside")  #it will add this to the file
+    
+#readlines() method #readlines method reads a single line from the file  if we want to use multiple lines we can use loop
+f = open('mufile.txt', 'r')
+while True:
+    line = f.readline()
+    if not line:
+        break 
+    print (line)    #ans it will print everything line by line
+  # I am Sufyan
+  #i like coding
+  
+#writelines() method #writelines method in python writes a sequence of string to a file.The sequence can be be any iterable object. Such as list, tuple
+f = open('myfile2.txt', 'w')
+lines = ['line 1\n', 'line 2\n', 'line 3\n']
+f.writelines(line)
+f.close    #it will add all lines in that file if the file does not exist it will create one #you can use loop in it
+#ans line 1
+#     line 2
+#     line 3
+
+#seek() function     #this function allows you to move the current position within a file to a specific position .the position specifeid in bytes. you can move forward and backward 
+with open('file.txt', 'r') as f:
+    f.seek(10)
+    data = f.read(5)
+    print (data) #ans it will print the 5 characters that came after 10th character 
+    
+#tell() function #This function returns the current position within the file in bytes. this can be useful for keeping track of your location within the file
+with open('filr.txt', 'r') as f:
+    data = f.read(10)
+    current_position = f.tell()
+    f.seek(current_positon) #it will print the position of you where you are
+    
+#trucate() function  #if you want to type the specific amount of character in the file
+with open('sample.txt' 'w') as f:
+    f.write("Hello world")
+    f.trucate(5)
+with open ('sample.txt', 'r') as f:
+    print (f.read())  # ans Hello 
+
+#lambda function in python  #lanbda is a small anonymous function without a name. it is same as def function 
+#lambda  argument : expression 
+double = lambda x : x*2
+print (double(5)) #ans 10
+
+cube = lambda x : x*x*x
+print (cube(5)) #ans 125
+
+avg = lambda x, y, z: (x + y + z) /3
+print (avg(3, 5, 10)) #ans 6.0
+
+#map, filter ans reduce
+#map function #map function applies a function to each element in a sequence and returns a new sequence containing the transformed element 
+#map function map(function, iteration)
+
+numbers = [1, 2, 3, 4, 5]
+double = map (lambda x: x * 2, numbers)
+print (list(double)) #[2, 4, 6, 8, 10]
+
+#filter  #filter function filter a sequence of elements based on a given predicate and return a new sequence containing only the element that meet the predicate 
+#file function filter(predicate, iterable)
+
+number = [1, 2, 3, 4, 5]
+def filter_function(a):
+    return a > 2
+new = list(filter(filter_function , number))
+print (new) #[3, 4, 5]
+
+#reduce  #reduce function is a function that applies a function to a sequence and returns a single value 
+#reduce method reduce (function, iteration) we have to import it
+
+from functools import reduce 
+numbers =[1, 2, 3, 4, 5]
+sum = reduce(lambda x, y: x + y, numbers)
+print (sum)    #ans [15]    
+
+#'is' and '==' in python     #is and == are both comparison operater that can be used to check if two values arr equal. but there are some differences
+#is operater comparies the identity of two objects 
+#== operater comparies the value of the object 
+#is will only return True if the object being compared are some in the memory 
+#== will return True if the object have same values
+
+a = [1, 2, 3]
+b = [1, 2, 3]
+print (a == b)    #True
+print (a is b)      #False
+
+a = "Sufyan"
+b = "Sufyan"
+print (a is b)   #True
+print (a == b)   #True
+
+a = 3
+b = 3
+print (a is b)   #True 
+print (a == b)   #False
+
+#object_ oriented programming #Thr basic ideas of oop is in python is classes and object to represent real world scenario 
+
+#Class    #a class is a blueprint or template for creating object. it defines the properties and method that an object of the class will have
+
+#Object   #an object is an instance of a class and it contains its own data and methods for example you could create a class called "person" that has properties such as name and age and method such as speak and walk
+
+#Class 
+class Details:
+    name = "Sufyan"
+    age = 17
+ 
+a = Details()
+a.name = "Ayan"   #ans Ayan 10
+a.age = 10 #if I don't print the other one
+print (a.name, a.age)  #ans Sufyan 17
+                      
+#Constractor    #A Constructor is a special method in a class used to create and initialize an object of a class There are different types of constructors.Constructor is invked automatically when a subject of a class is created 
+
+#Default constructor    #when the constructor does not accept any argument from the object and had only one argument self
+class Details:
+    def __init__(self):
+        print ("animal belong to group")
+obj1=Details() #ans animal belong to group
+
+#parameterized constructor #when the constructor accept argument along with self, it is known as parameter constructor. These argument can be used inside the class to assign values
+class Details:
+    def __init__ (self, animal, group):
+        self.animal = animal
+        self.group = group 
+obj1 = Details ("crab", "cockroach")        
+print (obj1.animal, "belong to the ", obj1.group , "group")   
+
+#python decorates  #decorate is a function that takes another function as an argument and return a new function that modifies the behavior of the assigned function 
+
+def greet(fx):
+    def mfx (*args, **kwargs):
+        print ("Good morning")
+        fx (*args, **kwargs)
+        print ("Thanks for using this function")
+    return mfx
+        
+@greet
+def hello():
+    print ("Hello world")
+hello() #ans  Good morning
+          #Hello world
+          #Thanks for using this function
+          
+@greet
+def add(a, b):
+    print (a + b)      
+add (1 ,2) #Good morning
+             #3
+             #Thanks for using this function
+
+#Getters #getter in python are method that are used to access the value of an object,s property. They are used to return the value of a specific property.
+#defined using @property
+class myclass:
+    def __init__(self, value):
+        self._value = value
+@property
+def value(self):
+    return self._value
+obj = myclass(10)  
+obj._value  #ans 10
+
+#Setters  #swe do not take any parameter in getter. we cannot show the value through getter. for that we need setter method which can be added by decorating method with
+#@property _name_setter
+class myclass:
+    def __init__(self, value):
+        self._value = value
+@property
+def value(self):
+    return self._value
+@value.setter
+def value (self, new_value):
+    self._value = new_value
+obj = myclass(10)
+obj._value = 20
+obj._value
+
+#imheritence #if you had a program named abc and you want to change it to xyz. you can't change the name one bye one so we use inheritance 
+class Employee:
+    def __init__ (self, name, id):
+        self.name = name
+        self.id = id
+    def showDetails(self):
+        print (f"The name of the Employee: {self.id} is {self.name}")
+        #if we want to change the name
+        
+class programmer(Employee):
+    def showlanguage(self):
+        print ("The default language is python")
+e1 = Employee("Rohan", 400)
+e1.showDetails()  #ans The name of the Employee: 400 is Rohan
+e2 = programmer("Harry", 500)
+e2.showDetails() #ans The name of the Employee: 500 is Harry
+e2.showlanguage() #ans The default language is python
+ 
+
+#Access specifies/modifies 
+ #Access specifies/Modifiers in Python propramming are used to limit the access of class variable and class method outside of class in while implemating the concept of inheritance.
+
+#Public access specifier in python #All the variable and methed in python are by default public. Any instance variable in a class Followed by "self" key word is self_var_name are public accessed
+
+class student:
+    def __init__ (self, name, age):
+        self.name = name
+        self.age = age
+obj = student(21, "Harry")
+print (obj.name)  #Harry
+print (obj.age)  #21
+
+#private access modifies #private members of a class (variable or method) are those members which are only accessible inside the class. we use (__). but we can still access it
+class myclass:
+    def __init__(self):
+        self._private_attribute = "I am private"
+        self.__mangled_attribute = "I am mangled"
+my_object = myclass()
+print (my_object._private_attribute)
+#ans i am private 
+#print (my_object.__mangled_attribute)
+#ans show error
+print (my_object._myclass__mangled_attribute)
+#ans I am mangled
+
+#protected access modifies #in (oop) the term protection is used to describe a member (i.e a method or attributes) of a class itself and it's subclass. we use (_)
+class student:
+    def __init__(self):
+        self._name = "Harry" 
+    def _funname(self): #protected meth
+        return "codewithHarry"
+class subject(student):
+   pass
+      
+obj = student()
+obj1 = subject 
+
+print (obj._name)   #ans Harry
+print (obj._funname()) #ans codewithHa
+print (obj1._name)  #ans Harry
+print (obj1._funname) #ans codewithHarr
+
+#static method in python are methods that belong to a class rather than an instance of a class. They are defined using @staticmethod decorater
+class math:
+    @staticmethod
+    def add (a, b):
+        return a + b#we used this method
+result = math.add(1, 2)#in the class not
+print (result)  #ans 3     #outside
+
+#instance vs class variable  #class variable are defined at the class level and we share among all instance of the class
+class myclass:
+    class_variable = 0
+    def __init__ (self):
+        myclass_class_variable +=1
+    def print_class_variable (self):
+        print (myclass.class_variable)
+    
+obj1 = myclass()
+obj2 = myclass()
+obj1.print_class_variable()  #2
+obj2.print_class_variable()  #2
+
+#class method #@classmethod is used to change the variable of the class directly 
+class Employee:
+    company  "Apple"
+    def show (self):
+        print (f"The name is {self.name} and company is {self.company}")
+    @classmethod
+    def changecompany (self, newcompa ny):
+        self.company = new company
+
+e1 = Employee()
+e1.name = "Harry" #The name is Harry and company is Apple
+e1.show() 
+e1.changecompany("Tesla")  
+e1.show  #The name is Harry and company is Tesla
+
+#class method as alternative method 
+# Class method belongs to the class rather than an instance of the class one common use is as alternative Constructor is when you want to create an object that stored in a different format. Ex dictionary,string
+class person:
+    def __init__ (self, name, age):
+        self.name = name 
+        self.age = age
+    @classmethod #cls = self
+    def from_string (cls, string):
+        name, age = string.split(',')
+        return cls (name, int(age))
+person = person.from_string("John Doe,30")
+print (person.name, person.age) 
+#ans John Doe 30
+
+#dir(), __dict__ and help method in python # These methods make it easy for us to understand how classes resolve various function and execute code
+
+#dir() method # This function returns a list of all the attributes and method available for an object
+x = [1, 2, 3]
+print (dir(x))
+#it will print all the method and function 
+#['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getstate__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+
+#__dict__ attribute # This attribute returns a dictionary representation of an object,s attribute.
+class person:
+    def __init__(self, name ,age):
+        self.name = name
+        self.age = age
+p = person("John", 30)
+print (p.__dict__)  #ans{'name': 'John', 'age': 30}
+
+#help() method # This method is used to get help Documentation for an object including a description of its attribute
+class person:
+    def add(a, b):
+        print (a + b)
+print (help(person) #it will show everything about that object
+#Help on class person in module __main__:
+
+#class person(builtins.object)
+# |  Methods defined here:
+# |
+# |  add(a, b)
+# |
+# |  ----------------------------------------------------------------------
+# |  Data descriptors defined here:
+# |
+# |  __dict__
+# |      dictionary for instance variables
+# |
+# |  __weakref__
+# |      list of weak references to the object
+
+#None
+
+#super() keyword in python # when a class inherits form a parent class. it can override or extend the method defined in the parent class. sometimes you want to use the parent class method in the child class. Then we will use super()
+
+class Employee:
+    def __init__ (self, name , id):
+        self.name = name
+        self.id = id
+        
+class programmer(Employee):
+    def __init__ (self, name, id, lang):
+        super().__init__ (name, id)
+        self.lang = lang
+Rohan = Employee("Rohan", "420") 
+harry = programmer ("Harry", "123", "python")
+print (harry.name)  #ans Harry
+print (harry.id)b  #ans 123
+print (harry.lang)   #ans python
+
+#magic/dunder method  # There are special methods that you can define in your classes and when involved they give you a powerful way to manipulate objects    
+
+#__len__ method # This method is used to get the length of an object
+
+class Employee:
+    def __init__ (self, name):
+        self.name = name
+    def __len__ (self):
+        i = 0                                             for c in self.name
+        i = i + 1
+        return i 
+e = Employee("Harry")        
+print (e)    #ans Harry
+               #ans 5
+               
+#__str__ and __repr__ method # These both methods are used to convert an object to a string representation 
+#str method is used when you want to print out an object 
+#While repr method is used When you want to get a string representation of an object        
+class Employee:
+    def __init__ (self, name):
+        self.name = name
+        
+    def __str__(self):
+        return (f"The name of the employee is {self.name}")  
+    def __repr__(self):
+        return (f"The name of the employee is {self.name}")     
+a = Employee("Harry")         
+print (e) #ans The name of the employee is Harry
+#if we comment the str method the answer will be same
+
+#__call__ method #The call method to make an object collable meaning that you can pass it as a parameter to a function and it will be executed when call
+
+def __call__(self):
+    print ("Hey i am here")
+ 
+#method overriding in python.  #method overriding is a way to customise the behaviour of a class based on its specific needs
+class shape:
+    def area(self):
+        print ("Claculating area ...")  
+class circle(shape):
+    def __init__(self, radius):
+        self.radius = radius
+    def area(self):
+        print ("Calculating area of a circle...")
+        super().area()
+        return 3.14 * self.radius * self.radius  
+        
+                                                        
